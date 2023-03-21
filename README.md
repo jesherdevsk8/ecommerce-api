@@ -1,5 +1,4 @@
-## Ecommerce API Estudos Ruby 3.1.2 Rails 7
-
+# Ecommerce API Ruby 3.1.2 Rails 7 - This api is for didactic purposes
 
 ## Install Dependencies
 
@@ -15,13 +14,13 @@ sudo apt install libssl-dev
 yum install openssl-devel
 ```
 
-- start project with flag -T to skip minitest
+## start project with flag -T to skip minitest
 
 ```bash
 rails new ecommerce-api --api -d mysql -T
 ```
 
-- install and config mailcatcher then test it - _config/environments/development.rb_
+## install and config mailcatcher then test it - _config/environments/development.rb_
 
 ```ruby
 config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
