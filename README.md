@@ -41,3 +41,10 @@ rails g devise:install
 rails g devise_token_auth:install User auth/v1/user
 rails db:migrate
 ```
+
+## generate controllers
+
+```ruby
+rails g controller admin/v1/api
+rails g controller storefront/v1/api
+```
