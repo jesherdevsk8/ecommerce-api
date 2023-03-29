@@ -40,6 +40,8 @@ ActionMailer::Base.mail(to: 'jesherdevsk8@gmail.com', from: 'ecommerce@test.com'
 rails g devise:install
 rails g devise_token_auth:install User auth/v1/user
 rails db:migrate
+
+rails g devise:views -v mailer
 ```
 
 ## generate controllers

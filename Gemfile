@@ -25,7 +25,7 @@ gem "bootsnap", require: false
 gem 'devise_token_auth', '~> 1.2', '>= 1.2.1'
 
 group :development, :test do
-
+  
 end
 
 group :development do
