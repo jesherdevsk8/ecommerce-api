@@ -19,7 +19,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem "rack-cors"
+gem "rack-cors"
 
 # Token based authentication for rails. Uses Devise + OmniAuth.
 gem 'devise_token_auth', '~> 1.2', '>= 1.2.1'
