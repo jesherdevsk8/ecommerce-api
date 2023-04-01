@@ -94,3 +94,49 @@ config.i18n.default_locale = :'pt-BR'
 mkdir -p config/locales/pt-BR
 touch config/locales/pt-BR/{active_record,devise}.yml
 ```
+
+
+## configure tests unit with Rspec
+
+- add to gemfile
+
+```ruby
+group :development, :test do
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'rspec-rails', '~> 4.0.1'
+  gem 'shoulda-matchers', '~> 4.0'
+end
+```
+
+```bash
+bundle install && rails g rspec:install
+```
+
+- configure factory_bot and shoulda_matchers
+
+```bash
+mkdir -p spec/support
+
+cat << EOF >> spec/support/factory_bot.rb
+  RSpec.configure do |config|
+    config.include FactoryBot::Syntax::Methods
+  end
+EOF
+
+cat << EOF >> spec/support/shoulda_matchers.rb
+  Shoulda::Matchers.configure do |config|
+    config.integrate do |with|
+      with.test_framework :rspec
+      with.library :rails
+    end
+  end
+EOF
+```
+## [ add in spec/rails_helper.rb ]
+
+```ruby
+require 'rspec/rails'
+
+Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
+```
