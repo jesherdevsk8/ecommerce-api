@@ -30,6 +30,33 @@ config.action_mailer.delivery_method = :smtp
 config.action_mailer.smtp_settings = { address: 'localhost', port: 1025 }
 ```
 
+## Customize your reset password
+
+- pre visualize your email page
+
+```bash
+mkdir -p test/mailers/previews/devise
+
+cat << EOF >> test/mailers/previews/devise/mailer_preview.rb
+  class Devise::MailerPreview < ActionMailer::Preview
+    def reset_password_instructions
+      Devise::Mailer.reset_password_instructions(User.first, {})
+    end
+  end
+EOF
+```
+
+[http://localhost:3000/rails/mailers/devise/mailer/reset_password_instructions](http://localhost:3000/rails/mailers/devise/mailer/reset_password_instructions)
+
+## [add in test/mailers/previews/devise]
+```ruby
+class Devise::MailerPreview < ActionMailer::Preview
+  def reset_password_instructions
+    Devise::Mailer.reset_password_instructions(User.first, {})
+  end
+end
+```
+
 ```ruby
 ActionMailer::Base.mail(to: 'jesherdevsk8@gmail.com', from: 'ecommerce@test.com', subject: 'Apenas Testando', body: 'xD').deliver_now!
 ```
