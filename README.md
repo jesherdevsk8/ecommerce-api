@@ -77,3 +77,20 @@ rails g devise:views -v mailer
 rails g controller admin/v1/api
 rails g controller storefront/v1/api
 ```
+
+## Config locales - [add in config/application.rb]
+
+[active_record.pt-BR.yml](https://github.com/svenfuchs/rails-i18n/blob/master/rails/locale/pt-BR.yml)
+
+[devise.pt-BR.yml](https://gist.github.com/mateusg/924555)
+
+```ruby
+# I18n config
+config.i18n.load_path += Dir[Rails.root.join('config/locales/**/*.{rb,yml}')]
+config.i18n.default_locale = :'pt-BR'
+```
+
+```bash
+mkdir -p config/locales/pt-BR
+touch config/locales/pt-BR/{active_record,devise}.yml
+```
