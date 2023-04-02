@@ -27,8 +27,8 @@ gem 'devise_token_auth', '~> 1.2', '>= 1.2.1'
 group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
-  gem 'rspec-rails', '~> 4.0.1'
-  gem 'shoulda-matchers', '~> 4.0'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
 end
 
 group :development do
