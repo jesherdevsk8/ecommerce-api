@@ -29,6 +29,8 @@ group :development, :test do
   gem 'faker'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
+  # Guard::RSpec automatically run your specs (much like autotest) - https://github.com/guard/guard-rspec
+  gem 'guard-rspec', require: false
 end
 
 group :development do
