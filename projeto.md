@@ -61,4 +61,13 @@ pt-BR:
         future_date: "deve ser uma data futura"
 
 EOF
+
+```
+
+## Adicionar imagem para produto
+
+- *[ Adicione em app/models/product.rb ]*
+
+```ruby
+has_one_attached :image
 ```

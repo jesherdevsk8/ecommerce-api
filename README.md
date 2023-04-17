@@ -140,3 +140,17 @@ require 'rspec/rails'
 
 Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
 ```
+
+## install active storage
+
+```bash
+rails active_storage:install
+rails db:migrate
+```
+- *will generate a configuration file - config/storage.yml*
+
+- *setup your active storage service to local config/environments/development.rb*
+
+```ruby
+config.active_storage.service = :local
+```
